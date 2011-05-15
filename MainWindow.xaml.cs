@@ -7,22 +7,16 @@ namespace Immutable_Deque_visualization
 {
     public partial class MainWindow : Window
     {
-        private IDeque<string> m_deque = Deque<string>.Empty;
+        private readonly DequeViewModel m_viewModel;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            int i = 1;
-            for (; i <= 21; i++)
-                m_deque = m_deque.EnqueueLeft(i.ToString());
+            m_viewModel = new DequeViewModel();
+            DataContext = m_viewModel;
 
-            VisualizeDeque();
-        }
-
-        void VisualizeDeque()
-        {
-            Visualize(m_deque, null);
+            Visualize(m_viewModel.Deque, null);
         }
 
         void Visualize<T>(IDeque<T> iDeque, TreeNode parent)
@@ -106,10 +100,10 @@ namespace Immutable_Deque_visualization
             return parent == null ? treeContainer.AddRoot(dequeNode) : treeContainer.AddNode(dequeNode, parent);
         }
 
-        TreeNode AddValueNode<T>(T value, TreeNode parent)
+        void AddValueNode<T>(T value, TreeNode parent)
         {
             var valueNode = new ValueNode<T>(value);
-            return treeContainer.AddNode(valueNode, parent);
+            treeContainer.AddNode(valueNode, parent);
         }
     }
 }
