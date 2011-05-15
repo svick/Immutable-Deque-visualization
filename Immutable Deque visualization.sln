@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Immutable Deque visualization", "Immutable Deque visualization.csproj", "{1F446F05-39D0-41BA-AE94-08049A937A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeContainer", "TreeContainer\TreeContainer\TreeContainer.csproj", "{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLayout", "TreeContainer\GraphLayout\GraphLayout\GraphLayout.csproj", "{FB8364B6-55D2-45B0-B173-E6308C19DD61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Debug|x86.ActiveCfg = Debug|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Debug|x86.Build.0 = Debug|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Release|Any CPU.ActiveCfg = Release|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Release|x86.ActiveCfg = Release|x86
+		{1F446F05-39D0-41BA-AE94-08049A937A94}.Release|x86.Build.0 = Release|x86
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿<Window x:Class="VisLogTree.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Visual/Logical Tree Viewer" Height="500" Width="765" xmlns:TreeContainer="clr-namespace:TreeContainer;assembly=TreeContainer" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="791" SizeToContent="Manual">
+	<Grid ShowGridLines="False" Width="Auto">
+		<Grid.RowDefinitions>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Rectangle Fill="#FFE3E6FF" Stroke="#FF000000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"/>
+		<Rectangle Fill="#FFF5EBD6" Stroke="#FF000000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Grid.Column="1"/>
+		<ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+			<TreeContainer:TreeContainer Width="Auto" Height="Auto" x:Name="tcMain" Margin="8,8,8,8" VerticalBuffer="20" ButtonBase.Click="tcMain_Click"/>
+		</ScrollViewer>
+		<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Column="1" Margin="0,0,0,0">
+			<StackPanel Background="OrangeRed" Height="Auto" x:Name="spnlDialog" Width="218.15">
+				<Label FontSize="20" FontFamily="Arial" Foreground="White" Name="lblDialog">Tree Dialog Control</Label>
+				<ListBox>
+					<ListBoxItem Content="Chapter 1"/>
+					<ListBoxItem Content="Chapter 2"/>
+				</ListBox>
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<Button MinWidth="75" Margin="10" Content="Help" IsEnabled="True"/>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Height="Auto" Margin="0,14,0,0" HorizontalAlignment="Center">
+				<RadioButton x:Name="rbLogicalTree" Width="Auto" Height="15.96" Content="Logical Tree" IsChecked="True" Checked="rbLogicalTree_Checked"/>
+				<RadioButton x:Name="rbVisualTree" Width="Auto" Height="15.96" Content="Visual Tree" Checked="rbVisualTree_Checked"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Window>
