@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -7,14 +6,8 @@ namespace Immutable_Deque_visualization
 {
     public static class TypeExtensions
     {
-        private static readonly Dictionary<Type, string> KeywordTypes =
-            new Dictionary<Type, string> { { typeof(int), "int" } };
-
         public static string GetShortName(this Type type)
         {
-            if (KeywordTypes.ContainsKey(type))
-                return KeywordTypes[type];
-
             string result = type.Name;
             if (type.IsGenericType)
             {
@@ -24,11 +17,14 @@ namespace Immutable_Deque_visualization
                     result = result.Substring(0, result.LastIndexOf('`'));
                 }
 
-                result = string.Format(
-                    "{0}<{1}>",
-                    result,
-                    string.Join(", ",
-                                type.GetGenericArguments().Select(GetShortName)));
+                var genericArguments = type.GetGenericArguments();
+
+                if (genericArguments.Length != 1 || genericArguments[0] != typeof(string))
+                    result = string.Format(
+                        "{0}<{1}>",
+                        result,
+                        string.Join(", ",
+                                    genericArguments.Select(GetShortName)));
             }
 
             return result;

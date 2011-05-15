@@ -7,19 +7,19 @@
         Title="MainWindow" Height="350" Width="800">
     <Window.Resources>
         <DataTemplate DataType="{x:Type local:DequeNodeBase}">
-            <Border BorderBrush="Black" BorderThickness="1">
-                <TextBlock Text="{Binding}" Margin="1" />
+            <Border BorderBrush="Black" BorderThickness="1" MinWidth="10">
+                <TextBlock Text="{Binding}" Margin="1" HorizontalAlignment="Center" />
             </Border>
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <StackPanel DockPanel.Dock="Right">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBox MinWidth="100" Text="{Binding NewNodeValue}" Margin="{StaticResource margin}" />
             <Button Command="{Binding EnqueueLeftCommand}" Margin="{StaticResource margin}">Enqueue left</Button>
             <Button Command="{Binding EnqueueRightCommand}" Margin="{StaticResource margin}">Enqueue right</Button>
             <Button Command="{Binding DequeueLeftCommand}" Margin="{StaticResource margin}">Dequeue left</Button>
             <Button Command="{Binding DequeueRightCommand}" Margin="{StaticResource margin}">Dequeue right</Button>
         </StackPanel>
-        <local:DequeControl Deque="{Binding Deque}" />
+        <local:DequeControl Deque="{Binding Deque}" HorizontalAlignment="Center" />
     </DockPanel>
 </Window>
