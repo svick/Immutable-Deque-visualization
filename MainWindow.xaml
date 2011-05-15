@@ -1,8 +1,9 @@
 ﻿<Window x:Class="Immutable_Deque_visualization.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:tc="clr-namespace:TreeContainer;assembly=TreeContainer"
         xmlns:local="clr-namespace:Immutable_Deque_visualization"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" d:DataContext="{d:DesignInstance local:DequeViewModel}"
         Title="MainWindow" Height="350" Width="800">
     <Window.Resources>
         <DataTemplate DataType="{x:Type local:DequeNodeBase}">
@@ -12,6 +13,6 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <tc:TreeContainer Name="treeContainer" Margin="5" x:FieldModifier="private" />
+        <local:DequeControl x:Name="dequeControl" Deque="{Binding Deque}" />
     </DockPanel>
 </Window>
