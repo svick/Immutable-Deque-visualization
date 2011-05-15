@@ -13,6 +13,13 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <local:DequeControl x:Name="dequeControl" Deque="{Binding Deque}" />
+        <StackPanel DockPanel.Dock="Right">
+            <TextBox MinWidth="100" Text="{Binding NewNodeValue}" Margin="{StaticResource margin}" />
+            <Button Command="{Binding EnqueueLeftCommand}" Margin="{StaticResource margin}">Enqueue left</Button>
+            <Button Command="{Binding EnqueueRightCommand}" Margin="{StaticResource margin}">Enqueue right</Button>
+            <Button Command="{Binding DequeueLeftCommand}" Margin="{StaticResource margin}">Dequeue left</Button>
+            <Button Command="{Binding DequeueRightCommand}" Margin="{StaticResource margin}">Dequeue right</Button>
+        </StackPanel>
+        <local:DequeControl Deque="{Binding Deque}" />
     </DockPanel>
 </Window>

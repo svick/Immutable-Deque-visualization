@@ -9,7 +9,7 @@ namespace Immutable_Deque_visualization
     public partial class DequeControl : UserControl
     {
         public static readonly DependencyProperty DequeProperty =
-            DependencyProperty.Register("Deque", typeof(IDeque<string>), typeof(DequeControl), new PropertyMetadata(DequeChanged));
+            DependencyProperty.Register("Deque", typeof(IDeque<string>), typeof(DequeControl), new PropertyMetadata(null, null, CoerceDeque));
 
         public IDeque<string> Deque
         {
@@ -22,18 +22,29 @@ namespace Immutable_Deque_visualization
             InitializeComponent();
         }
 
-        static void DequeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        static object CoerceDeque(DependencyObject d, object baseValue)
         {
-            ((DequeControl)d).Visualize();
+            // I don't like this, but I didn't find a better way
+            ((DequeControl)d).Visualize((IDeque<string>)baseValue);
+            return baseValue;
         }
 
         public void Visualize()
         {
-            Visualize(Deque, null);
+            Visualize(Deque);
+        }
+
+        void Visualize<T>(IDeque<T> iDeque)
+        {
+            treeContainer.Clear();
+            Visualize(iDeque, null);
         }
 
         void Visualize<T>(IDeque<T> iDeque, TreeNode parent)
         {
+            if (iDeque == null)
+                return;
+
             var dequeNode = AddDequeNode(iDeque, parent);
 
             if (iDeque is Deque<T>.SingleDeque)
