@@ -50,7 +50,7 @@ namespace Immutable_Deque_visualization
             if (iDeque is Deque<T>.SingleDeque)
             {
                 var singleDeque = (Deque<T>.SingleDeque)iDeque;
-                Visualize(singleDeque.Item, dequeNode);
+                VisualizeDynamic(singleDeque.Item, dequeNode);
             }
             else if (iDeque is Deque<T>)
             {
@@ -68,48 +68,39 @@ namespace Immutable_Deque_visualization
             if (dequelette is Deque<T>.One)
             {
                 var one = (Deque<T>.One)dequelette;
-                Visualize(one.V1, dequeletteNode);
+                VisualizeDynamic(one.V1, dequeletteNode);
             }
             else if (dequelette is Deque<T>.Two)
             {
                 var two = (Deque<T>.Two)dequelette;
-                Visualize(two.V1, dequeletteNode);
-                Visualize(two.V2, dequeletteNode);
+                VisualizeDynamic(two.V1, dequeletteNode);
+                VisualizeDynamic(two.V2, dequeletteNode);
             }
             else if (dequelette is Deque<T>.Three)
             {
                 var three = (Deque<T>.Three)dequelette;
-                Visualize(three.V1, dequeletteNode);
-                Visualize(three.V2, dequeletteNode);
-                Visualize(three.V3, dequeletteNode);
+                VisualizeDynamic(three.V1, dequeletteNode);
+                VisualizeDynamic(three.V2, dequeletteNode);
+                VisualizeDynamic(three.V3, dequeletteNode);
             }
             else if (dequelette is Deque<T>.Four)
             {
                 var four = (Deque<T>.Four)dequelette;
-                Visualize(four.V1, dequeletteNode);
-                Visualize(four.V2, dequeletteNode);
-                Visualize(four.V3, dequeletteNode);
-                Visualize(four.V4, dequeletteNode);
+                VisualizeDynamic(four.V1, dequeletteNode);
+                VisualizeDynamic(four.V2, dequeletteNode);
+                VisualizeDynamic(four.V3, dequeletteNode);
+                VisualizeDynamic(four.V4, dequeletteNode);
             }
         }
 
-        void Visualize<T>(T value, TreeNode parent)
+        void Visualize(object value, TreeNode parent)
         {
-            MethodInfo bestOverload = null;
-            Type t = typeof(T);
-            while (bestOverload == null)
-            {
-                bestOverload = typeof(DequeControl).GetGenericMethod(
-                    "Visualize", BindingFlags.NonPublic | BindingFlags.Instance, t, typeof(TreeNode));
-                if (bestOverload == null)
-                    t = t.BaseType;
-            }
-            var thisMethod = MethodBase.GetCurrentMethod();
+            AddValueNode(value, parent);
+        }
 
-            if (bestOverload == thisMethod)
-                AddValueNode(value, parent);
-            else
-                bestOverload.MakeGenericMethod(t.GetGenericArguments()).Invoke(this, new object[] { value, parent });
+        void VisualizeDynamic(dynamic value, TreeNode parent)
+        {
+            Visualize(value, parent);
         }
 
         private TreeNode AddDequeletteNode<T>(Deque<T>.Dequelette dequelette, TreeNode parent)
